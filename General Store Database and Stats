@@ -1,0 +1,30 @@
+--Create a general store named "printemps" database
+
+CREATE TABLE printemps (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO printemps VALUES (1, "keychains", "general", 1.99, 77);
+INSERT INTO printemps VALUES (2, "chocolate croissants", "pastry", 2.50, 20);
+INSERT INTO printemps VALUES (3, "oxfords", "footwear", 30.00, 7);
+INSERT INTO printemps VALUES (4, "hats", "accessories", 13.99, 29);
+INSERT INTO printemps VALUES (5, "bracelets", "accessories", 8.99, 49);
+INSERT INTO printemps VALUES (6, "earings", "accessories", 6.99, 34);
+INSERT INTO printemps VALUES (7, "calendars", "general", 1.00, 18);
+INSERT INTO printemps VALUES (8, "dog food", "pets", 8.99, 64);
+INSERT INTO printemps VALUES (9, "jackets", "clothing", 24.99, 10);
+INSERT INTO printemps VALUES (10, "dresses", "clothing", 28.99, 41);
+INSERT INTO printemps VALUES (11, "pasta", "grocery", 4.99,21);
+INSERT INTO printemps VALUES (12, "dumplings", "grocery", 6.99, 50);
+
+--display the database ordered by price. 
+SELECT * FROM printemps where price order by price;
+
+--what is the avg price of items in the accessories section? 
+SELECT AVG(price) "avg accessories item price"
+FROM printemps
+where section='accessories'; 
+
+--what are the 5 items with highest quantity? 
+SELECT section, price, quantity
+FROM printemps
+order by quantity >=20 desc
+limit 5; 
