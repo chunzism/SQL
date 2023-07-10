@@ -23,8 +23,8 @@ SELECT AVG(price) "avg accessories item price"
 FROM printemps
 where section='accessories'; 
 
---what are the 5 items with highest quantity? 
+--what are the 5 items with quantity that are equal or greater than 35? 
 SELECT section, price, quantity
 FROM printemps
-order by quantity >=20 desc
+order by quantity >=35 desc
 limit 5; 
